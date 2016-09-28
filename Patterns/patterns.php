@@ -1,9 +1,8 @@
 <?php
 
-// Factory-----------------------------------------------------------------
+// FACTORY
 class Auto
 {
-
     public $name;
     public $model;
 
@@ -30,7 +29,7 @@ class AutoFactory
 $car = AutoFactory::getCar('lamburgini', '924');
 echo $car->getName();
 
-// SINGLETON-------------------------------------------------------------------------
+// SINGLETON
 class Singleton
 {
     /**
@@ -53,7 +52,7 @@ class Singleton
     }
 }
 
-// STRATEGY----------------------------------------------------------------------------------------
+// STRATEGY
 interface creatureInterface
 {
     public function getName();
