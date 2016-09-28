@@ -1,22 +1,26 @@
 <?php
 
 // Factory-----------------------------------------------------------------
-class Auto{
+class Auto
+{
 
     public $name;
     public $model;
 
-    public function __construct($name, $model)    {
+    public function __construct($name, $model)
+    {
         $this->name = $name;
         $this->model = $model;
     }
 
-    public function getName()    {
+    public function getName()
+    {
         return "Name is " . $this->name . " " . $this->model;
     }
 }
 
-class AutoFactory{
+class AutoFactory
+{
     public static function getCar($name, $model)
     {
         return new Auto($name, $model);
@@ -27,7 +31,8 @@ $car = AutoFactory::getCar('lamburgini', '924');
 echo $car->getName();
 
 // SINGLETON-------------------------------------------------------------------------
-class Singleton{
+class Singleton
+{
     /**
      * @var Singleton The reference to *Singleton* instance of this class
      */
@@ -38,7 +43,8 @@ class Singleton{
      *
      * @return Singleton The *Singleton* instance.
      */
-    public static function getInstance()    {
+    public static function getInstance()
+    {
         if (null === static::$instance) {
             static::$instance = new static();
         }
@@ -48,30 +54,38 @@ class Singleton{
 }
 
 // STRATEGY----------------------------------------------------------------------------------------
-interface creatureInterface {
+interface creatureInterface
+{
     public function getName();
 }
 
-class Robot implements creatureInterface {
-    public function getName() {
+class Robot implements creatureInterface
+{
+    public function getName()
+    {
         return 'robot name';
     }
 }
 
-class Human implements creatureInterface{
-    public function getName() {
+class Human implements creatureInterface
+{
+    public function getName()
+    {
         return 'human name';
     }
 }
 
-class SomeController{
+class SomeController
+{
     public $creature;
 
-    public function __construct(creatureInterface $creature) {
+    public function __construct(creatureInterface $creature)
+    {
         $this->creature = $creature;
     }
 
-    public function getInfo() {
+    public function getInfo()
+    {
         return $this->creature->getName();
     }
 }
