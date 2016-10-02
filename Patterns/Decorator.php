@@ -8,7 +8,7 @@ interface SoundInterface
     public function getSound();
 }
 
-class HalfLife implements SoundInterface
+class Humiliation implements SoundInterface
 {
     /**
      * @return string
@@ -64,4 +64,4 @@ class FirstBlood implements SoundInterface
     }
 }
 
-echo (new FirstBlood(new HeadShot(new HalfLife())))->getSound();
+echo (new FirstBlood(new HeadShot(new Humiliation())))->getSound();
